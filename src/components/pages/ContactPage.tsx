@@ -115,7 +115,7 @@ export function ContactPage() {
                   <p className="text-muted-foreground mb-6">
                     Every query is treated with confidentiality, care, and commitment.
                   </p>
-                  <form onSubmit={handleSubmit} className="space-y-6">
+                  <form name="contact" method="POST" data-netlify="true" className="space-y-6">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div className="space-y-2">
                         <Label htmlFor="firstName">First Name</Label>
@@ -127,6 +127,7 @@ export function ContactPage() {
                           }
                           className="border-blue-200 focus:border-blue-500"
                           required
+                          name={"firstName"}
                         />
                       </div>
                       <div className="space-y-2">
@@ -139,6 +140,7 @@ export function ContactPage() {
                           }
                           className="border-blue-200 focus:border-blue-500"
                           required
+                          name={"lastName"}
                         />
                       </div>
                     </div>
@@ -155,11 +157,13 @@ export function ContactPage() {
                           }
                           className="border-blue-200 focus:border-blue-500"
                           required
+                          name={"email"}
                         />
                       </div>
                       <div className="space-y-2">
                         <Label htmlFor="phone">Phone</Label>
                         <Input
+                            name={"phone"}
                           id="phone"
                           type="tel"
                           value={formData.phone}
@@ -175,6 +179,7 @@ export function ContactPage() {
                     <div className="space-y-2">
                       <Label htmlFor="service">Service Needed</Label>
                       <Select
+                          name={"service"}
                         value={formData.service}
                         onValueChange={(value) =>
                           setFormData({ ...formData, service: value })
@@ -206,6 +211,7 @@ export function ContactPage() {
                         className="border-blue-200 focus:border-blue-500"
                         placeholder="Please describe your legal matter or inquiry..."
                         required
+                        name={"message"}
                       />
                     </div>
 

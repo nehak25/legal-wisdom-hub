@@ -115,7 +115,7 @@ export function ContactPage() {
                   <p className="text-muted-foreground mb-6">
                     Every query is treated with confidentiality, care, and commitment.
                   </p>
-                  <form name="contact" method="POST" data-netlify="true" className="space-y-6">
+                  <form name="contact" method="POST" data-netlify="true" className="space-y-6" netlify>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div className="space-y-2">
                         <Label htmlFor="firstName">First Name</Label>
